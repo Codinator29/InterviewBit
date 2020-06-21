@@ -1,0 +1,17 @@
+class Solution {
+    public int solve(int A, int B, int C) {
+        var lcm = (B*C)/gcd(B,C);
+
+        return (int)A/lcm;
+    }
+    
+    public int gcd(int A, int B) {
+        if(A==0 && B==0){
+            throw new Exception("GCD doesn't exist for 0 & 0");
+        }
+        if(B==0){
+            return A;
+        }
+        return gcd(B, A%B);
+    }
+}
